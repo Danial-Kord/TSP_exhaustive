@@ -79,19 +79,22 @@ void permute(Point a[], int l, int r)
 int main() {
     int n = 0;
     cin >> n;
-    Point points[n];
+    Point point[n];
+    cout<<"points : ";
     for (int i = 0; i < n; ++i) {
 //        cin >> points[i].x;
 //        cin >> points[i].y;
-        points[i].x = rand() % 20000;
-        points[i].y = rand() % 20000;
+        point[i].x = rand() % 20000;
+        point[i].y = rand() % 20000;
+        cout << "x : " <<point[i].x << " y : "<<point[i].y<<", ";
     }
+    cout<<endl;
     Stopwatch sw;
-    permute(points,0,n-1);//O(n!)
+    permute(point,0,n-1);//O(n!)
 cout<< "........ result ......."<<endl;
     cout << "points : [ " ;
-    for (int j = 0; j <n ; ++j) {//O(n^2)
-        cout << "x : " <<points->x << " y : "<<points->y<<",";
+    for (int j = 0; j <=n ; ++j) {//O(n^2)
+        cout << "x : " <<points.at(j).x << " y : "<<points.at(j).y<<",";
     }
     cout << "]"<<endl;
     cout << "min : "<< answer;
